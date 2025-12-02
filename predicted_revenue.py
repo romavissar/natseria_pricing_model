@@ -46,10 +46,10 @@ CABIN_INVENTORY = {
 
 # Seasonal Occupancy Modifiers
 SEASONAL_OCCUPANCY = {
-    "winter": 0.7,   # Dec, Jan, Feb - lower except holidays
+    "winter": 1.1,   # Dec, Jan, Feb - second best (skiing season in mountains)
     "spring": 0.85,  # Mar, Apr, May
     "summer": 1.2,   # Jun, Jul, Aug - peak season
-    "fall": 0.9      # Sep, Oct, Nov
+    "fall": 0.75     # Sep, Oct, Nov - lowest season
 }
 
 # Holiday Occupancy Boost
@@ -98,8 +98,8 @@ def calculate_seasonality(date):
     day_of_week = date.weekday()
     
     monthly_factors = {
-        1: 0.95, 2: 0.75, 3: 0.85, 4: 0.95, 5: 1.35, 6: 1.85,
-        7: 1.95, 8: 1.95, 9: 1.25, 10: 0.95, 11: 0.85, 12: 0.95
+        1: 1.25, 2: 1.15, 3: 0.85, 4: 0.95, 5: 1.35, 6: 1.85,
+        7: 1.95, 8: 1.95, 9: 1.15, 10: 0.95, 11: 0.85, 12: 1.25
     }
     
     weekend_factor = 1.25 if day_of_week >= 4 else 1.0

@@ -81,18 +81,18 @@ The seasonality factor combines three components:
 #### 1. Monthly Base Factors
 | Month | Factor | Season |
 |-------|--------|--------|
-| January | 0.95 | Winter |
-| February | 0.75 | Winter |
+| January | 1.25 | Winter |
+| February | 1.15 | Winter |
 | March | 0.85 | Spring |
 | April | 0.95 | Spring |
 | May | 1.35 | Spring |
 | June | 1.85 | Summer |
 | July | 1.95 | Summer (Peak) |
 | August | 1.95 | Summer (Peak) |
-| September | 1.25 | Fall |
+| September | 1.15 | Fall |
 | October | 0.95 | Fall |
 | November | 0.85 | Fall |
-| December | 0.95 | Winter |
+| December | 1.25 | Winter |
 
 #### 2. Weekend Premium
 - **Friday, Saturday, Sunday**: 1.25x multiplier
@@ -114,7 +114,7 @@ Sₜ = 1.95 (July) × 1.25 (Weekend) × 1.0 (No Holiday) = 2.44
 
 **Example**: Christmas Day (Dec 25):
 ```
-Sₜ = 0.95 (December) × 1.25 (Weekend) × 5.0 (Holiday) = 5.94
+Sₜ = 1.25 (December) × 1.25 (Weekend) × 5.0 (Holiday) = 7.81
 ```
 
 ### Booking Window Factor (Bₜ)
@@ -187,12 +187,15 @@ Occupancy Rate = Base Occupancy × Seasonal Modifier × Holiday/Weekend Boost
 - **Lakeview Cabin**: 45% (luxury, lower demand but higher value)
 
 #### Seasonal Occupancy Modifiers
-| Season | Modifier | Months |
-|--------|----------|--------|
-| Summer | 1.2x | June, July, August |
-| Spring | 0.85x | March, April, May |
-| Fall | 0.9x | September, October, November |
-| Winter | 0.7x | December, January, February |
+
+**Note**: This is a mountain resort, so winter is the **second-best season** due to skiing and winter sports demand.
+
+| Season | Modifier | Months | Notes |
+|--------|----------|--------|-------|
+| Summer | 1.2x | June, July, August | Peak season (best) - hiking, outdoor activities |
+| Winter | 1.1x | December, January, February | Second best - skiing season in mountains |
+| Spring | 0.85x | March, April, May | Moderate season - shoulder period |
+| Fall | 0.75x | September, October, November | Lowest season - off-peak |
 
 #### Holiday/Weekend Boosts
 | Period | Boost | Dates |
